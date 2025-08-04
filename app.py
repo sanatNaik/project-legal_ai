@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 from langchain_core.documents import Document
 from sentence_transformers import SentenceTransformer
 import gradio as gr
+from fastapi import FastAPI
 import chromadb
 from chromadb.config import Settings
 from chromadb.utils import embedding_functions
@@ -101,5 +102,5 @@ demo = gr.ChatInterface(
     description="AI that understands Indian law — powered by Retrieval-Augmented Generation (RAG). It references official legal   documents including the Constitution of India, Indian Penal Code (IPC), Code of Criminal Procedure (CrPC), Code of Civil Procedure (CPC), Indian Evidence Act (IEA), and Motor Vehicles Act (MVA).",
     theme="ocean",
 )
-if __name__ == "__main__":
-    demo.launch()
+app = FastAPI()
+gradio_app = gr.mount_gradio_app(app, demo, path="/")
