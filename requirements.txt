@@ -1,0 +1,11 @@
+huggingface_hub>=0.28.1
+gradio==5.38.0
+openai==1.97.0
+chromadb==1.0.15
+langchain==0.3.26
+langchain-community==0.3.27
+langchain-core==0.3.68
+sentence-transformers==5.0.0
+python-dotenv==1.1.1
+httpx==0.28.1
+uvicorn==0.35.0
